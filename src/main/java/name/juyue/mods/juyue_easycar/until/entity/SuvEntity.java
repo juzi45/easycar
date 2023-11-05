@@ -21,18 +21,18 @@ import net.minecraft.world.World;
 
 
 //suv main suv的主体
-public abstract class Suv extends AbstractMinecartEntity{
+public abstract class SuvEntity extends AbstractMinecartEntity{
 
 
-    protected Suv(EntityType<?> type, World world, double x, double y, double z) {
+    public SuvEntity(EntityType<?> type, World world, double x, double y, double z) {
         super(type, world, x, y, z);
     }
-    protected Item getItem() {
+    public Item getItem() {
         return Items.MINECART;
     }
 }
 //suv属性
-abstract class SuvEntity extends MobEntity implements ModInitializer {
+abstract class SuvEntityRegistry extends MobEntity implements ModInitializer {
 
      public static  final EntityType<Entity> SUV = Registry.register(
              Registries.ENTITY_TYPE,
@@ -40,24 +40,24 @@ abstract class SuvEntity extends MobEntity implements ModInitializer {
              FabricEntityTypeBuilder.create(SpawnGroup.CREATURE).dimensions(EntityDimensions.fixed(0.76f,0.75f)).build()
              );
 
-    protected SuvEntity(EntityType<? extends MobEntity> entityType, World world) {
+    protected SuvEntityRegistry(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);
     }
 
     //suv外观界定渲染器
-public class SuvRenderer extends MobEntityRenderer<SuvEntity,SuvModel>{
+public static class SuvRenderer extends MobEntityRenderer<SuvEntityRegistry,SuvModel>{
     public  SuvRenderer(EntityRenderDispatcher entityRenderDispatcher){
         super(entityRenderDispatcher,
                 new SuvModel(),
                 0.5f);
     }
     @Override
-    public Identifier getTexture(SuvEntity entity){
+    public Identifier getTexture(SuvEntityRegistry entity){
         return new Identifier("entitytest","textuers/entity/suv/suv.png");
     }
 
 }
-
+//返回到clinet
 
 
 
