@@ -21,14 +21,10 @@ import net.minecraft.world.World;
 
 
 //suv main suv的主体
-public abstract class SuvEntity extends AbstractMinecartEntity{
+public abstract class SuvEntity extends Entity{
 
-
-    public SuvEntity(EntityType<?> type, World world, double x, double y, double z) {
-        super(type, world, x, y, z);
-    }
-    public Item getItem() {
-        return Items.MINECART;
+    public SuvEntity(EntityType<?> type, World world) {
+        super(type, world);
     }
 }
 //suv属性
