@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "juyue_easy-car",
+  "version": "${version}",
+  "name": "juyue_easy-car",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/juzi45/juyue_easy-car"
+  },
+  "license": "MIT",
+  "icon": "assets/juyue_easy-car/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "name.juyue.mods.juyue_easycar.client.Juyue_easy_carClient"
+    ],
+    "main": [
+      "name.juyue.mods.juyue_easycar.Juyue_easy_car"
+    ]
+  },
+  "mixins": [
+    "juyue_easy-car.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
